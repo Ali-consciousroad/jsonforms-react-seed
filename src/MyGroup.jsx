@@ -9,7 +9,11 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import { withJsonFormsLayoutProps } from '@jsonforms/react';
+import { rankWith, iuTypeIs } from '@jsonforms/core';
 
+// Create a tester tha checks if the corresponding uischema is of type 'Group',
+// if that's the case, we return 1000
+export const myGroupTester = rankWith(1000, iuTypeIs('Group'));
 const MyGroup = (props) => {
   const { uischema, schema, path, visible, renderers } = props;
 
