@@ -1,5 +1,6 @@
 {
-  "type": "VerticalLayout",
+  "type": "Group",
+  "label": "My Group",
   "elements": [
     {
       "type": "Control",
