@@ -1,4 +1,4 @@
-import { MaterialLabelableLayoutRendererProps } from '@jsonforms/material-renderers';
+import { MaterialLayoutRenderer } from '@jsonforms/material-renderers';
 import {
   Accordion,
   AccordionDetails,
@@ -14,7 +14,7 @@ import { rankWith, iuTypeIs } from '@jsonforms/core';
 // Create a tester tha checks if the corresponding uischema is of type 'Group',
 // if that's the case, we return 1000
 export const myGroupTester = rankWith(1000, iuTypeIs('Group'));
-const MyGroup = (props) => {
+const MyGroupRenderer = (props) => {
   const { uischema, schema, path, visible, renderers } = props;
 
   const layoutProps = {
@@ -33,7 +33,7 @@ const MyGroup = (props) => {
           <Typography>{uischema.label}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <MaterialLabelableLayoutRenderer {...layoutProps} />
+          <MaterialLayoutRenderer {...layoutProps} />
         </AccordionDetails>
       </Accordion>
     </Hidden>
